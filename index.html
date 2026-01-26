@@ -12,7 +12,11 @@
 
     <style>
       #audio {
-        display: none;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 200px;
+        z-index: 1000;
       }
     </style>
   </head>
@@ -68,7 +72,7 @@
           <h3 class="wish-hbd">Will You Be My Valentine Cutu</h3>
           <h5 id="wishText">kuch kuch</h5>
 
-          <audio id="audio" controls muted>
+          <audio id="audio" controls loop muted>
             <source src="./song/song.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
@@ -133,7 +137,7 @@
         <p>Okay, now come back and tell me if you liked it.</p>
         <p id="replay">Or click, if you want to watch it again.</p>
         <p class="last-smile">:)</p>
-        <p>https://github.com/riyanshjindal/valentines-day-special</p>
+        <p>https://github.com/swapniltake1/valentine-day-special</p>
       </div>
     </div>
 
