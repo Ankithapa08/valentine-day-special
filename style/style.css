@@ -134,6 +134,11 @@ body {
   height: auto;
 }
 
+.girl-dp {
+  width: 250px;
+  height: 300px;
+}
+
 .six .hat {
   position: absolute;
   width: 80px;

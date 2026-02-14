@@ -104,9 +104,16 @@ const animationTimeline = () => {
       const audio = document.getElementById("audio");
       if (audio) {
         audio.muted = false;
-        audio.play().catch(() => {
-          // Browser autoplay can block playback until user interaction.
-        });
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            // Autoplay was prevented, wait for user interaction
+            document.addEventListener('click', function playOnClick() {
+              audio.play().catch(err => console.log('Audio playback failed:', err));
+              document.removeEventListener('click', playOnClick);
+            }, { once: true });
+          });
+        }
       }
     })
     .staggerFrom(
